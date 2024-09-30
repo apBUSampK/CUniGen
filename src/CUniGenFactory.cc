@@ -5,5 +5,5 @@
 #include "CUniGenFactory.hh"
 
 cola::VFilter *CUniGenFactory::create(const std::map<std::string, std::string> & paramMap) {
-    return new CUniGenWriter(paramMap.at("name"));
+    return new CUniGenWriter(paramMap.at("fname"));
 }
