@@ -6,7 +6,7 @@
 #include "TFile.h"
 
 CUniGenWriter::CUniGenWriter(const std::string &fName) : outputFile(std::unique_ptr<TFile>(TFile::Open(fName.c_str(), "RECREATE"))),
-outputTree(std::make_unique<TTree>()), curEvent(), run(), _runFilled(false), count(0) {
+outputTree(std::make_unique<TTree>()), curEvent(std::make_unique<UEvent>()), run(std::make_unique<URun>()), _runFilled(false), count(0) {
     outputTree->Branch("run", run.get());
     outputTree->Branch("events", curEvent.get());
 }
