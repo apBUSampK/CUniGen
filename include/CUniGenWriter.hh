@@ -25,7 +25,7 @@ private:
 
     bool _runFilled;
 
-    const size_t buffSize = 10000;
+    const size_t buffSize;
     size_t count;
 public:
     CUniGenWriter() = delete;
@@ -33,7 +33,7 @@ public:
     CUniGenWriter(CUniGenWriter&&) = delete;
     CUniGenWriter& operator=(const CUniGenWriter&) = delete;
     CUniGenWriter& operator=(CUniGenWriter&&) = delete;
-    explicit CUniGenWriter(const std::string& fName);
+    CUniGenWriter(const std::string& fName, size_t buffSize = 100);
     ~CUniGenWriter() final;
 
     void operator()(std::unique_ptr<cola::EventData>&&) final;

@@ -43,8 +43,6 @@ URun::URun()
   fDecayer   = "";
   fAProj = fZProj = fATarg = fZTarg = fBWeight = fNEvents = 0;
   fPProj = fPTarg = fBMin = fBMax = fPhiMin = fPhiMax = fSigma = 0.;
-  cout << "Warning: Default constructor of URun should not be used!"
-       << endl;
 }
 //--------------------------------------------------------------------
 
